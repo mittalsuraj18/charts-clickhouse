@@ -17,6 +17,7 @@ metadata:
     "helm.sh/hook": "post-install,post-upgrade,post-rollback"
     "helm.sh/hook-delete-policy": "hook-succeeded, hook-failed"
 spec:
+  ttlSecondsAfterFinished: 300
   template:
     metadata:
       name: {{ printf "%s-grafana-annotation-job-post-%s" .Release.Name (now | date "2006-01-02-15-04-05") }}
