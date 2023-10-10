@@ -6,3 +6,5 @@ __pycache__
 env/
 node_modules/
 .DS_Store
+charts/posthog/dev.out.yaml
+charts/posthog/values-custom.yaml
