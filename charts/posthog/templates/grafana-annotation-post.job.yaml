@@ -11,7 +11,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ printf "%s-grafana-annotation-job-post-%s" .Release.Name (now | date "2006-01-02-15-04-05") }}
+  name: {{ printf "%s-gfn-job-post-%s" .Release.Name (now | date "2006-01-02-15-04-05") }}
   labels: {{- include "_snippet-metadata-labels-common" . | nindent 4 }}
   annotations: {{- include "_snippet-metadata-annotations-common" . | nindent 4 }}
     "helm.sh/hook": "post-install,post-upgrade,post-rollback"
@@ -20,7 +20,7 @@ spec:
   ttlSecondsAfterFinished: 300
   template:
     metadata:
-      name: {{ printf "%s-grafana-annotation-job-post-%s" .Release.Name (now | date "2006-01-02-15-04-05") }}
+      name: {{ printf "%s-gfn-job-post-%s" .Release.Name (now | date "2006-01-02-15-04-05") }}
     spec:
       restartPolicy: Never
 
